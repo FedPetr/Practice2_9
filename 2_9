@@ -1,0 +1,122 @@
+Задание 1.
+
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+class matrix
+{private:
+    int mat[3][3];
+    int l,c;
+
+public:
+    void getdate()
+    {
+
+        for (int i=0; i<5; i++)
+            for (int j=0; j<5; j++)
+                mat[i][j]=rand() %10;
+    };
+
+    void putdate()
+    {cout << "Введите кол-во столбцов:\n";
+        cin >> c;
+        cout << "Введите кол-во строчек:\n";
+        cin >> l;
+        for (int i=0; i<l; i++)
+        {
+            for (int j=0; j<c; j++)
+                cout<<mat[i][j]<<" ";
+            cout<<endl;}
+    };
+
+};
+
+int main()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    matrix mat;
+    mat.getdate();
+    mat.putdate();
+    return 0;
+}
+
+
+
+Задание 2.
+
+#include "iostream"
+#include <windows.h>
+using namespace std;
+int main()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    int l, c, a[10][10], b[10][10], sum[10][10], i, j;
+    cout << "Введите кол-во строчек:\n";
+    cin >> l;
+    cout << "Введите кол-во столбцов:\n";
+    cin >> c;
+    cout << endl << "Введите числа первой матрицы: " << endl;
+
+    for(i = 0; i < l; ++i)
+        for(j = 0; j < c; ++j)
+        {
+            cout << "Введите элемент а" << i + 1 << j + 1 << ": ";
+            cin >> a[i][j];
+        }
+    cout << endl << "Введите числа второй матрицы: " << endl;
+    for(i = 0; i < l; ++i)
+        for(j = 0; j < c; ++j)
+        {
+            cout << "Введите элемент b" << i + 1 << j + 1 << ": ";
+            cin >> b[i][j]; }
+    for(i = 0; i < l; ++i)
+        for(j = 0; j < c; ++j) sum[i][j] = a[i][j] + b[i][j];
+    cout << endl << "Сумма матриц равна: " << endl;
+    for(i = 0; i < l; ++i)
+        for(j = 0; j < c; ++j)
+        {
+            cout << sum[i][j] << " ";
+            if(j == c - 1) cout << endl;
+        }
+    return 0;
+}
+
+Задание 3.
+
+#include "iostream"
+#include <windows.h>
+using namespace std;
+int main()
+{
+    SetConsoleOutputCP(CP_UTF8);
+        int l, c, a[10][10], b[10][10], i, j;
+        cout << "Введите кол-во строчек:\n";
+        cin >> l;
+        cout << "Введите кол-во столбцов:\n";
+        cin >> c;
+        cout << endl << "Введите числа матрицы: " << endl;
+
+        for(i = 0; i < l; ++i)
+            for(j = 0; j < c; ++j)
+            {
+                cout << "Введите элемент " << i + 1 << j + 1 << ": ";
+                cin >> a[i][j];
+
+            }
+        for(i = 0; i < l; ++i){
+            for(j = 0; j < c; ++j)
+                cout << a[i][j] << " ";
+        }
+
+        for(i = 0; i < l; ++i){
+            for(j = 0; j < c; ++j)
+                b[i][j] = a[j][i];
+        }
+        for(i = 0; i < l; ++i){
+            for(j = 0; j < c; ++j)
+                cout << b[i][j] << " ";
+                if(j == c) cout << endl;
+        }
+        return 0;
+    }
